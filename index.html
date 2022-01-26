@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Bootstrap Css CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--My Styles-->
+    <link rel="stylesheet" href="assets/styles/index/index.css">
+    <title>Ocean</title>
+</head>
+<body>
+    <div class="main-container d-flex">
+        <div class="secondary-container d-flex justify-content-around ">
+            <div class="text-container">
+                <h1 class="txt-1">Ocean</h1>
+                <h3 class="txt-2">Encuentra a tus mejores artistas</h3>
+                <form method="GET" class="artist-form d-flex align-items-center" onsubmit="return false">
+                    <input type="text" name="artist" id="artist" class="txt-artist p-2 pl-2 pr-5" placeholder="Buscar artista">
+                    <!--<i class="fas fa-search"></i>-->
+                    <button id="button"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="link-container">
+                    <ul class="links" id="result">
+                        <!--<li class="link-item"><a href=""><span>${}</span> <i class="fas fa-music"></i></a></li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="svg-container">
+                <img src="assets/img/composition-19 2.svg" alt="" class="svg">
+            </div>
+        </div>
+
+    </div>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>

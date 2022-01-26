@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*variables*/
+$background-page:#171717;
+$crimson:#DA0037;
+$white:#EDEDED;
+$soft-gray:#3f3f3f;
+$gray:#2E2E2E;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    box-sizing: content-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: $background-page;
+}
+
+.main-container{
+    width: 100%;
+    padding:9em 0 0 0;
+    .secondary-container{
+        width: 90%;
+        max-width: 1900px;
+        margin: auto;
+        .text-container{ 
+            width: 50%;   
+            .txt-1{
+                font-size: 6em;
+                color: $crimson;
+                font-weight: bold;
+            }
+            .txt-2{
+                font-size: 2em;
+                color: $white;
+                font-weight: lighter;
+            }
+            .artist-form{
+                background-color: $white;
+                width: 100%;
+                .txt-artist{
+                    width: 100%;
+                    outline: none;
+                    border: 0;
+                    font-family: 'Roboto', sans-serif;
+                }  
+                button{
+                    background-color: $white;
+                    padding: 0.6em;
+                    border: 0;
+                    outline: none;
+                    i{
+                        background-color: $white;
+                        color: $gray;
+                    }
+            }
+            }
+            .link-container{
+                display: block;
+                .links{
+                    height: 250px;
+                    overflow-y: auto;
+                    .link-item{           
+                        list-style: none;
+                        background-color: $gray;
+                        a{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 0.6em 1em;
+                            color: $white;
+                            text-decoration: none;
+                        }
+                        a:hover{
+                            background-color: $soft-gray;
+                        }
+                    }
+                }
+            }
+
+        }
+        .svg-container{
+            width: 50%;
+            .svg{
+                width: 500px;
+                opacity: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:993px){
+    .main-container{
+        padding: 2em 0 0 0;
+        .secondary-container{
+            flex-direction: column;
+            .text-container{
+                width: 100%;
+                .txt-1{
+                    font-size: 5em;
+                }
+                .txt-2{
+                    font-size: 1em;
+                }
+            }
+            .svg-container{
+                .svg{
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*variables*/
+$background-page:#171717;
+$crimson:#DA0037;
+$white:#EDEDED;
+$soft-gray:#3f3f3f;
+$gray:#2E2E2E;
+$play-background:#4B5452;
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: content-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: $background-page;
+}
+.main-container{
+    width: 100%;
+    .secondary-container{
+        width: 90%;
+        max-width: 1900px;
+        margin: auto;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 60% auto;
+        gap: 3rem;
+        .left-container{
+            display: grid;
+            grid-template-rows: 8em auto auto;
+            align-items: center;
+            padding: 0 0 6rem 0;
+            .text-container{
+                .artist-form{
+                    width: 100%;
+                    background-color: $gray;
+                    .txt-artist{
+                        background-color: $gray;
+                        width: 100%;
+                        outline: none;
+                        border: 0;
+                        font-family: 'Roboto', sans-serif;
+                        color: $white;
+                    }  
+                    button{   
+                        padding: 0.6em;
+                        border: 0;
+                        outline: none;
+                        background-color:$gray;
+                        i{
+                            color: $white;
+                        }
+                }
+                }
+                .link-container{
+                    position: relative;
+                    .links{
+                        position: absolute;
+                        width: 100%;
+                        overflow-y: auto;
+                        .link-item{           
+                            list-style: none;
+                            background-color: $white;
+                            a{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 0.6em 1em;
+                                color: $gray;
+                                text-decoration: none;
+                            }
+                            a:hover{
+                                background-color: $gray;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+    
+            }
+            .artist-meta-info-container{
+                display: grid;
+                grid-template-rows: auto auto;
+                gap: 3rem;
+                padding: 0 0 2rem 0;
+                .artist-meta-info{
+                    display: grid;
+                    grid-template-columns:14rem auto;
+                    grid-template-rows: 17rem;
+                    align-items: center;
+                   .artist-img-container{
+                       align-items: center;
+                       .artist-img{
+                        animation: delay 1s !important;
+                        box-shadow: 1px 10px 5px #131313;
+                        width: 12rem;
+                        height: auto;
+                        border-radius: 100px;
+                       }
+                   } 
+                   .artist-data-container{
+                       .artist-name{
+                            animation: delay 1.5s ;
+                           color: $crimson;
+                           font-weight: bold;
+                           font-size: 5rem;
+                       }
+                       .artist-born,.artist-music-gender{
+                        animation: delay 2.5s ;
+                           color: $white;
+                           font-weight: lighter;
+                           font-size: 1rem;
+    
+                       }
+                   }
+                }
+                .artist-playlist-container{
+                    .songs{
+                        .song{
+                            color: $white;
+                            padding: 0.7rem 1rem;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            transition: 0.2s ease-in-out;
+                            span:nth-child(1){
+                                display: flex;
+                                justify-content: space-between;
+                                gap: 1rem;
+                                .song-img-container{
+                                    width: 2rem;
+                                    .song-img{
+                                        width: 2rem;
+                                        height: auto;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                        }
+                        .song:hover{
+                            background-color: $gray;
+                        }
+                    }
+                }
+    
+            }
+        }
+        .right-container{
+            .top-similar-container:nth-child(1){
+                margin: 8.5rem 0 0 0 ;
+            }
+            .top-similar-container:nth-child(2){
+                margin: 3rem 0 10rem 0  ;
+            }
+            .top-similar-container{
+
+                span{
+                    color: $white;
+                    font-weight: bold;
+                    font-size: 30px;
+
+                }
+                .album-cards-container{
+                    padding: 1rem 0 0 0 ;
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    gap: 1rem;
+                    .card-album{
+                 
+                        .card-hover{
+
+                            span{
+                                a{
+                                    background-color: black;
+                                    padding: 2rem 1rem;
+                                    color: $white;
+                                    display: flex;
+                                    justify-content: center;
+                                    font-size: 1rem;
+                                    white-space: nowrap;
+                                    text-decoration: none;
+                                    border-radius: 5px;
+                                    transition: 0.2s ease-in-out;
+                                    
+                                }
+                                a:hover{
+                                    background-color: $crimson;
+                                    color: $white; 
+                                }
+                            }            
+                        }
+                    }
+
+                }
+            }
+
+        }
+        .media-player{
+            height: 8rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: $gray;
+            align-items: center;
+            display: flex;
+            .media-option-container{
+                height: 100%;
+                width: 95%;
+                margin: auto;
+                .artist-song-detail-container{
+                    display: grid;
+                    grid-template-columns: repeat(2,auto);
+                    gap: 1rem;
+                    padding: 1rem;
+                    background-color: $background-page;
+                    border-radius: 10px;
+                    .artist-song-detail-img{
+                        .artist-img{
+                            width: 5rem;
+                            height: 5rem;
+                            border-radius: 10px;
+                            object-fit: cover;
+                        }
+                    }
+                    .artist-song-detail-info{
+                        color: $white;
+                        span:nth-child(1){
+                            font-size: 30px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .media-main{
+                    width: 30%;
+                    display: grid;
+                    grid-template-rows: repeat(2,auto);
+                    gap: 1rem;
+                    .song-bar-container{
+                        .progress-container{
+                            border-radius: 100px;
+                            width: 100%;
+                            background-color:$soft-gray;
+                            height: 0.5rem;
+                            .progress-bar{
+                                border-radius: 100px;
+                                background-color: $white;
+                                height: 100%;
+                                width: 62%;
+                            }
+                        }
+                    }
+                    .media-song-options{
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        justify-content: center;
+                        color: $white;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        i{
+                            cursor: pointer;
+                            font-size: 1.5rem;
+                        }
+                        i:nth-child(2){
+                            background-color: $play-background;
+                            border-radius: 100px;
+                            padding: 1rem;
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+                .sound-bar-container{
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem;
+                    background-color: $background-page;
+                    border-radius: 10px;
+                    gap: 1rem;
+                    color: $white;
+                    .slider{
+                        -webkit-appearance: none;
+                        height: 0.5rem;
+                        background: $white;
+                        border-radius: 5px;
+                        outline: none;
+                    }
+                    .slider::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        background: $crimson;
+                        border-radius: 5rem;
+                        cursor: pointer;
+                      }
+
+                }
+            }
+        }
+    }
+}
+@keyframes delay{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+

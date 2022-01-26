@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/*variables*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: #171717;
+}
+
+.main-container {
+  width: 100%;
+  padding: 9em 0 0 0;
+}
+
+.main-container .secondary-container {
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+}
+
+.main-container .secondary-container .text-container {
+  width: 50%;
+}
+
+.main-container .secondary-container .text-container .txt-1 {
+  font-size: 6em;
+  color: #DA0037;
+  font-weight: bold;
+}
+
+.main-container .secondary-container .text-container .txt-2 {
+  font-size: 2em;
+  color: #EDEDED;
+  font-weight: lighter;
+}
+
+.main-container .secondary-container .text-container .artist-form {
+  background-color: #EDEDED;
+  width: 100%;
+}
+
+.main-container .secondary-container .text-container .artist-form .txt-artist {
+  width: 100%;
+  outline: none;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-container .secondary-container .text-container .artist-form button {
+  background-color: #EDEDED;
+  padding: 0.6em;
+  border: 0;
+  outline: none;
+}
+
+.main-container .secondary-container .text-container .artist-form button i {
+  background-color: #EDEDED;
+  color: #2E2E2E;
+}
+
+.main-container .secondary-container .text-container .link-container {
+  display: block;
+}
+
+.main-container .secondary-container .text-container .link-container .links {
+  height: 250px;
+  overflow-y: auto;
+}
+
+.main-container .secondary-container .text-container .link-container .links .link-item {
+  list-style: none;
+  background-color: #2E2E2E;
+}
+
+.main-container .secondary-container .text-container .link-container .links .link-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6em 1em;
+  color: #EDEDED;
+  text-decoration: none;
+}
+
+.main-container .secondary-container .text-container .link-container .links .link-item a:hover {
+  background-color: #3f3f3f;
+}
+
+.main-container .secondary-container .svg-container {
+  width: 50%;
+}
+
+.main-container .secondary-container .svg-container .svg {
+  width: 500px;
+  opacity: 50%;
+}
+
+@media screen and (max-width: 993px) {
+  .main-container {
+    padding: 2em 0 0 0;
+  }
+  .main-container .secondary-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-container .secondary-container .text-container {
+    width: 100%;
+  }
+  .main-container .secondary-container .text-container .txt-1 {
+    font-size: 5em;
+  }
+  .main-container .secondary-container .text-container .txt-2 {
+    font-size: 1em;
+  }
+  .main-container .secondary-container .svg-container .svg {
+    display: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--SEO tags-->
+
+    <!--Font Awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!--Bootstrap Css CDN-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!--My Styles-->
+     <link rel="stylesheet" href="assets/styles/artists/artist.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container d-flex">
+        <div class="secondary-container">
+            <div class="grid">
+                <div class="left-container">
+                    <div class="text-container">
+                        <form method="GET" class="artist-form d-flex align-items-center" onsubmit="return false">
+                            <input type="text" name="artist" id="artist" class="txt-artist p-2 pl-2 pr-5" placeholder="Buscar artista">
+                            <!--<i class="fas fa-search"></i>-->
+                            <button id="button"><i class="fas fa-search"></i></button>
+                        </form>
+                        <div class="link-container">
+                            <ul class="links" id="result">
+                                <!--<li class="link-item"><a href=""><span>${}</span> <i class="fas fa-music"></i></a></li>-->
+                            </ul>
+                        </div>      
+                    </div>
+                    <div class="artist-meta-info-container">           
+                        <div class="artist-meta-info" id="artist-meta-info">
+                            <div class="artist-img-container">
+                                <img src="assets/img/alt_img5.png" alt="" class="artist-img">
+                            </div>
+                            <div class="artist-data-container">
+                                <h1 class="artist-name"></h1>
+                                <h3 class="artist-born"></h3>
+                                <h3 class="artist-music-gender"></h3>
+                            </div> 
+                        </div>
+                        <div class="artist-playlist-container" >
+                            <ul class="songs" id="songs">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container">
+                   <!-- <div class="top-similar-container" >
+                        <span>Top albums</span>
+                        <div class="album-cards-container" id="top-album">
+
+                        </div>
+                    </div>
+                    -->
+                    <div class="top-similar-container" >
+                        <span>Artistas similares</span>
+                        <div class="album-cards-container" id="similar-artists">
+                        </div>
+                    </div>
+                <div class="media-player">
+                    <div class="media-option-container d-flex justify-content-between align-items-center ">
+                        <div class="artist-song-detail-container">
+                            <div class="artist-song-detail-img">
+                                <img src="https://imagenes.elpais.com/resizer/1os4PaAKQ7nA3XL8XQZ1w1L1Sls=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/WRJKYKHLD5GX3FJMZE7OEYJOQU.jpg" alt="" class="artist-img">
+                            </div>
+                            <div class="artist-song-detail-info d-flex flex-column">
+                                <span>All of you</span>
+                                <span>Ariana grande</span>
+                            </div>
+                        </div>
+                        <div class="media-main ">
+                            <div class="song-bar-container">
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="media-song-options">
+                                <i class="fas fa-backward"></i>
+                                <i class="fas fa-play"></i>
+                                <i class="fas fa-forward"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="sound-bar-container">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" class="slider">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+ <script src="assets/js/search.js"></script>
+ <script src="assets/js/artists.js"></script>
+</body>
+</html>

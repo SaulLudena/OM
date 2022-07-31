@@ -11,7 +11,7 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <!--My Styles-->
      <link rel="stylesheet" href="assets/styles/artists/artist.css">
-    <title>Document</title>
+    <title>Ocean | Artist</title>
 </head>
 <body>
     <div class="main-container d-flex">
@@ -19,7 +19,7 @@
             <div class="grid">
                 <div class="left-container">
                     <div class="text-container">
-                        <form method="GET" class="artist-form d-flex align-items-center" onsubmit="return false">
+                        <form method="GET" class="artist-form d-flex align-items-center">
                             <input type="text" name="artist" id="artist" class="txt-artist p-2 pl-2 pr-5" placeholder="Buscar artista">
                             <!--<i class="fas fa-search"></i>-->
                             <button id="button"><i class="fas fa-search"></i></button>
@@ -42,61 +42,56 @@
                             </div> 
                         </div>
                         <div class="artist-playlist-container" >
-                            <ul class="songs" id="songs">
+                            <ul class="songs" id="songs">  
+
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="right-container">
-                   <!-- <div class="top-similar-container" >
-                        <span>Top albums</span>
-                        <div class="album-cards-container" id="top-album">
+                        <div class="top-similar-container" >
+                            <span>Artistas similares</span>
+                            <div class="album-cards-container" id="similar-artists">
+                            </div>
+                        </div>
+                        <div class="media-player">
+                            <div class="media-option-container d-flex justify-content-between align-items-center ">
+                                <div class="artist-song-detail-container" id="artist-song-detail">
+                                    <div class="artist-song-detail-img">
+                                       
+                                    </div>
+                                    <div class="artist-song-detail-info d-flex flex-column">
+                                        <span> </span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="media-main ">
+                                    <div class="song-bar-container">
+                                        <div class="progress-container">
+                                            <div class="progress-bar"></div>
+                                        </div>
+                                    </div>
 
-                        </div>
-                    </div>
-                    -->
-                    <div class="top-similar-container" >
-                        <span>Artistas similares</span>
-                        <div class="album-cards-container" id="similar-artists">
-                        </div>
-                    </div>
-                <div class="media-player">
-                    <div class="media-option-container d-flex justify-content-between align-items-center ">
-                        <div class="artist-song-detail-container">
-                            <div class="artist-song-detail-img">
-                                <img src="https://imagenes.elpais.com/resizer/1os4PaAKQ7nA3XL8XQZ1w1L1Sls=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/WRJKYKHLD5GX3FJMZE7OEYJOQU.jpg" alt="" class="artist-img">
-                            </div>
-                            <div class="artist-song-detail-info d-flex flex-column">
-                                <span>All of you</span>
-                                <span>Ariana grande</span>
-                            </div>
-                        </div>
-                        <div class="media-main ">
-                            <div class="song-bar-container">
-                                <div class="progress-container">
-                                    <div class="progress-bar"></div>
+                                    <div class="media-song-options">
+                                        <i class="fas fa-backward"></i>
+                                        <i class="fas fa-play"></i>
+                                        <i class="fas fa-forward"></i>
+                                    </div>
+                                </div>
+                                <div class="sound-bar-container">
+                                    <i class="fas fa-volume-up"></i>
+                                    <input type="range" class="slider">
                                 </div>
                             </div>
-
-                            <div class="media-song-options">
-                                <i class="fas fa-backward"></i>
-                                <i class="fas fa-play"></i>
-                                <i class="fas fa-forward"></i>
-                            </div>
-                        </div>
-
-
-                        <div class="sound-bar-container">
-                            <i class="fas fa-volume-up"></i>
-                            <input type="range" class="slider">
-                        </div>
-                    </div>
-                </div> 
+                        </div> 
+                </div>
             </div>
         </div>
     </div>
 
  <script src="assets/js/search.js"></script>
  <script src="assets/js/artists.js"></script>
+ <script src="assets/js/toggleSongs.js"></script>
+ <script src="assets/js/testingArrayEvents.js"></script>
 </body>
 </html>

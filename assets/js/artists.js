@@ -5,9 +5,14 @@ const artistMetaInfo = document.getElementById("artist-meta-info");
 const artistSongs = document.getElementById("songs");
 const artistSimilar = document.getElementById("similar-artists");
 const topAlbum = document.getElementById("top-album");
+let artistSongDetail = document.getElementById("artist-song-detail")
 
 
 
+
+window.onload = function (){
+    showArtistDetail();
+}
 
 //Metodo asincrono que muestra los datos de un artista cuando hayan cargado
 const showArtistDetail = async()=>{
@@ -35,38 +40,14 @@ const showArtistDetail = async()=>{
                 `;             
      showArtistSongs(artistId);
      showSimilarArtists(paramval);
-     displayMediaPlayerData(artistId);
+     displayMediaPlayerData(paramval ,artistId);
 
     } catch (e) {
         console.log(e);
     }
 }
-const showArtistSongs = async(id)=>{
-    try {
-        BASE_URL_TADB_TRACKS= 'https://theaudiodb.com/api/v1/json/2/mvid.php?i='+id;
-        const response2 = await fetch(BASE_URL_TADB_TRACKS);
-        const myJson2 = await response2.json();
-        console.log(myJson2);
-        artistSongs.innerHTML='';
-        for(var i=0;i<myJson2.mvids.length;i++){
-            artistSongs.innerHTML+=`
-            <li class="song d-flex justify-content-between align-items-center">
-                <span class=" d-flex justify-content-between align-items-center">
 
-                    <div class="song-name-container">
-                        <span class="song-name">${myJson2.mvids[i].strTrack}</span>
-                    </div>
-                </span>
-                 <span>
-                    <i class="fas fa-play-circle"></i>
-                 </span>
-            </li>
-            `
-        }
-    } catch (error) {
-        console.error(error)
-    }
-}
+
 
 const showSimilarArtists = async (artist) => {
     try {
@@ -74,17 +55,11 @@ const showSimilarArtists = async (artist) => {
       const response = await fetch(BASE_URL_LFM_SIMILAR).then((res) => res.json());
       artistSimilar.innerHTML = ''
 
-
-
-      response.similarartists.artist.slice(0, 6).forEach((similarArtist) => {
+      response.similarartists.artist.slice(0, 10).forEach((similarArtist) => {
             artistSimilar.innerHTML += `
                 <div class="card-album">
-
                     <div class="card-hover">
- 
                         <span><a href="artists.html?artistName=${similarArtist.name}">${similarArtist.name}</a></span>
-
- 
                     </div>
                 </div>
                 `
@@ -94,19 +69,54 @@ const showSimilarArtists = async (artist) => {
     }
 }
 
-const showAlbumsArtists = async(id) => {
+const displayMediaPlayerData = async (artistName) =>{
     try {
-        
+
+        BASE_URL_TADB = 'https://www.theaudiodb.com/api/v1/json/2/search.php?s='+artistName;
+        const response3 = await fetch(BASE_URL_TADB);
+        const myJson3 = await response3.json();
+        const artistObjTADB2=myJson3.artists[0];
+
+
+        artistSongDetail.innerHTML=''
+        artistSongDetail.innerHTML+=`
+            <div class="artist-song-detail-img">
+                 <img src="${artistObjTADB2.strArtistThumb}" alt="" class="artist-img">
+            </div>
+            <div class="artist-song-detail-info d-flex flex-column">
+                <span></span>
+                <span>${artistObjTADB2.strArtist}</span>
+            </div>
+        `;
     } catch (error) {
-        
+        console.log(error)
     }
 }
-const displayMediaPlayerData = async (id) =>{
+
+const showArtistSongs = async(id)=>{
     try {
-        
+        BASE_URL_TADB_TRACKS= 'https://theaudiodb.com/api/v1/json/2/mvid.php?i='+id;
+        const response2 = await fetch(BASE_URL_TADB_TRACKS);
+        const myJson2 = await response2.json();
+        //console.log(myJson2);
+            for(var i=0;i<myJson2.mvids.length;i++){
+                const elemento = `
+                <li class="song d-flex justify-content-between align-items-center cancion" id="cancion">
+                    <span class=" d-flex justify-content-between align-items-center">
+                        <div class="song-name-container">
+                            <span class="song-name">${myJson2.mvids[i].strTrack}</span>
+                        </div>
+                    </span>
+                    <span>
+                        <i class="fas fa-play-circle"></i>
+                    </span>
+                </li>
+                `
+                artistSongs.innerHTML+=elemento;
+
+            }
+
     } catch (error) {
         console.error(error)
     }
 }
-showArtistDetail();
-

@@ -5,9 +5,9 @@ const artistMetaInfo = document.getElementById("artist-meta-info");
 const artistSongs = document.getElementById("songs");
 const artistSimilar = document.getElementById("similar-artists");
 const topAlbum = document.getElementById("top-album");
+const videoPlayerContainer = document.getElementById("videoPlayer-container")
+
 let artistSongDetail = document.getElementById("artist-song-detail")
-
-
 
 
 window.onload = function (){
@@ -46,8 +46,6 @@ const showArtistDetail = async()=>{
         console.log(e);
     }
 }
-
-
 
 const showSimilarArtists = async (artist) => {
     try {
@@ -100,19 +98,33 @@ const showArtistSongs = async(id)=>{
         const myJson2 = await response2.json();
         //console.log(myJson2);
             for(var i=0;i<myJson2.mvids.length;i++){
-                const elemento = `
-                <li class="song d-flex justify-content-between align-items-center cancion" id="cancion">
-                    <span class=" d-flex justify-content-between align-items-center">
-                        <div class="song-name-container">
-                            <span class="song-name">${myJson2.mvids[i].strTrack}</span>
-                        </div>
-                    </span>
-                    <span>
-                        <i class="fas fa-play-circle"></i>
-                    </span>
-                </li>
-                `
-                artistSongs.innerHTML+=elemento;
+				const button= document.createElement("button");
+				button.innerHTML=`
+				<li class="song d-flex justify-content-between align-items-center cancion" id="cancion">
+				<span class=" d-flex justify-content-between align-items-center">
+					<div class="song-name-container">
+						<span class="song-name">${myJson2.mvids[i].strTrack}</span>
+					</div>
+				</span>
+				<span>
+					<i class="fas fa-play-circle"></i>
+				</span>
+				</li>
+				`
+				function playVideo(index){
+					button.addEventListener("click",function(){
+						const youTubeVideoCode = myJson2.mvids[index].strMusicVid.substr(myJson2.mvids[index].strMusicVid.length - 11)
+						const youtubeVideo = myJson2.mvids[index].strMusicVid
+						const youtubeUrlEmbed = `https://www.youtube.com/embed/${youTubeVideoCode}`
+						const trackName= myJson2.mvids[index].strTrack
+						console.log(youtubeUrlEmbed, youTubeVideoCode, youtubeVideo, trackName)
+						videoPlayerContainer.innerHTML=`<iframe width="100%" height="315"
+														src="${youtubeUrlEmbed}?autoplay=1" allow='autoplay' frameborder=”0″>
+														</iframe>`
+					})
+				}
+				playVideo(i)
+				artistSongs.appendChild(button)
 
             }
 

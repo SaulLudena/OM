@@ -119,37 +119,34 @@ body{
                    }
                 }
                 .artist-playlist-container{
-                    .songs{
-                        
-                        .song{
-                            cursor: pointer;
-                            color: $white;
-                            padding: 0.7rem 1rem;
-                            border-radius: 5px;
-                            transition: 0.2s ease-in-out;
-                            span:nth-child(1){
-                                display: flex;
-                                justify-content: space-between;
-                                gap: 1rem;
-                                .song-img-container{
-                                    width: 2rem;
-                                    .song-img{
-                                        width: 2rem;
-                                        height: auto;
-                                        border-radius: 5px;
-                                    }
-                                }
-                            }
-                        }
-                        .song:hover{
-                            background-color: $gray;
-                        }
-                    }
+					button{
+						outline: none;
+						display: grid;
+						flex-direction: column;
+						transition: 0.2s ease-in-out;
+						width: 100%;
+						outline: none;
+						border: 0;
+						cursor: pointer;
+						color: $white;
+						padding: 0.7rem 1rem;
+						border-radius: 5px;
+						transition: 0.2s ease-in-out;
+						background-color: $background-page;
+
+					}
+					button:hover{
+						background-color: $gray;
+					}
                 }
     
             }
         }
         .right-container{
+			.videoPlayer-container{
+				border: 1px solid red;
+				width: 100%;
+			}
             .top-similar-container:nth-child(1){
                 margin: 8.5rem 0 0 0 ;
             }

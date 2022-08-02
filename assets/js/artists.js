@@ -49,7 +49,7 @@ const showArtistDetail = async()=>{
 
 const showSimilarArtists = async (artist) => {
     try {
-      BASE_URL_LFM_SIMILAR ='http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist='+artist+'&api_key=a63b4b638a5b1421711915f35d15f602&format=json'
+      BASE_URL_LFM_SIMILAR ='https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist='+artist+'&api_key=a63b4b638a5b1421711915f35d15f602&format=json'
       const response = await fetch(BASE_URL_LFM_SIMILAR).then((res) => res.json());
       artistSimilar.innerHTML = ''
 

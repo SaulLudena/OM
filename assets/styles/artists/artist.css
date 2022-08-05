@@ -16,6 +16,16 @@ body {
   width: 100%;
 }
 
+.main-container .shadowColor {
+  width: 100%;
+  height: 20rem;
+  background: #020024;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0)), to(rgba(255, 34, 0, 0.392595)));
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0) 0%, rgba(255, 34, 0, 0.392595) 100%);
+  position: absolute;
+  z-index: -1;
+}
+
 .main-container .secondary-container {
   width: 90%;
   max-width: 1900px;
@@ -28,6 +38,7 @@ body {
   -ms-grid-columns: 60% auto;
       grid-template-columns: 60% auto;
   gap: 3rem;
+  padding: 3rem 0 0 0;
 }
 
 .main-container .grid .left-container {
@@ -35,10 +46,6 @@ body {
   display: grid;
   -ms-grid-rows: 8em auto auto;
       grid-template-rows: 8em auto auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 0 6rem 0;
 }
 
 .main-container .grid .left-container .text-container .artist-form {
@@ -102,30 +109,21 @@ body {
 }
 
 .main-container .grid .left-container .artist-meta-info-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 3rem;
-  padding: 0 0 2rem 0;
 }
 
 .main-container .grid .left-container .artist-meta-info-container .artist-meta-info {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 14rem auto;
-      grid-template-columns: 14rem auto;
-  -ms-grid-rows: 17rem;
-      grid-template-rows: 17rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main-container .grid .left-container .artist-meta-info-container .artist-meta-info .artist-img-container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-columns: 16rem auto;
+      grid-template-columns: 16rem auto;
 }
 
 .main-container .grid .left-container .artist-meta-info-container .artist-meta-info .artist-img-container .artist-img {
@@ -180,8 +178,13 @@ body {
 }
 
 .main-container .grid .right-container .videoPlayer-container {
-  border: 1px solid red;
   width: 100%;
+  height: 315px;
+}
+
+.main-container .grid .right-container .videoPlayer-container iframe {
+  width: 100%;
+  height: 315px;
 }
 
 .main-container .grid .right-container .top-similar-container:nth-child(1) {

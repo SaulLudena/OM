@@ -118,9 +118,7 @@ const showArtistSongs = async(id)=>{
 						const youtubeUrlEmbed = `https://www.youtube.com/embed/${youTubeVideoCode}`
 						const trackName= myJson2.mvids[index].strTrack
 						console.log(youtubeUrlEmbed, youTubeVideoCode, youtubeVideo, trackName)
-						videoPlayerContainer.innerHTML=`<iframe width="100%" height="315"
-														src="${youtubeUrlEmbed}?autoplay=1" allow='autoplay' frameborder=”0″>
-														</iframe>`
+						videoPlayerContainer.innerHTML=`<iframe src="${youtubeUrlEmbed}?autoplay=1" allow='autoplay' frameborder=”0″></iframe>`
 					})
 				}
 				playVideo(i)

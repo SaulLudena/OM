@@ -19,6 +19,15 @@ body{
 }
 .main-container{
     width: 100%;
+	.shadowColor{
+		width: 100%;
+		height: 20rem;
+		background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(255,34,0,0.3925945378151261) 100%);
+		position: absolute;
+
+		z-index: -1;
+	}
     .secondary-container{
         width: 90%;
         max-width: 1900px;
@@ -27,12 +36,11 @@ body{
     .grid{
         display: grid;
         grid-template-columns: 60% auto;
-        gap: 3rem;
+		gap: 3rem;
+		padding: 3rem 0 0 0 ;
         .left-container{
             display: grid;
             grid-template-rows: 8em auto auto;
-            align-items: center;
-            padding: 0 0 6rem 0;
             .text-container{
                 .artist-form{
                     width: 100%;
@@ -82,18 +90,13 @@ body{
     
             }
             .artist-meta-info-container{
-                display: grid;
-                grid-template-rows: auto auto;
-                gap: 3rem;
-                padding: 0 0 2rem 0;
+                display: flex;
+				flex-direction: column;
+				gap: 3rem;
                 .artist-meta-info{
                     display: grid;
-                    grid-template-columns:14rem auto;
-                    grid-template-rows: 17rem;
-                    align-items: center;
-
+                    grid-template-columns:16rem auto;
                    .artist-img-container{
-                       align-items: center;
                        .artist-img{
                         animation: delay 1s !important;
                         box-shadow: 1px 10px 5px #131313;
@@ -104,7 +107,7 @@ body{
                    } 
                    .artist-data-container{
                        .artist-name{
-                            animation: delay 1.5s ;
+                           animation: delay 1.5s ;
                            color: $crimson;
                            font-weight: bold;
                            font-size: 5rem;
@@ -144,8 +147,12 @@ body{
         }
         .right-container{
 			.videoPlayer-container{
-				border: 1px solid red;
-				width: 100%;
+				width:100%;
+				height:315px;
+				iframe{
+					width:100%;
+					height:315px;
+				}
 			}
             .top-similar-container:nth-child(1){
                 margin: 8.5rem 0 0 0 ;
